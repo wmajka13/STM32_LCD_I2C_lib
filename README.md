@@ -30,9 +30,9 @@ int __io_putchar(int ch)
     return 1;
 }
 ```
-Initiliazaing and writing:
+Initialization and writing:
 ```c
 LCD_initialize(&hi2c2, &htim10);
 printf("github.com/\nwmajka13");
-fflush(stdout); //can be omitted when buffoirng is turned off
+fflush(stdout); //can be omitted when buffering is turned off
 ```
