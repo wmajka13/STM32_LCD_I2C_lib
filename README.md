@@ -1,6 +1,6 @@
 # STM32 HD44780 I2C LCD Driver
 
-Lekka, zoptymalizowana i modułowa biblioteka w języku C do obsługi wyświetlaczy LCD 16x2 (sterownik HD44780) poprzez ekspander I2C (PCF8574) na mikrokontrolerach STM32 (nucleo-f411RE).
+A lightweight, optimized, and modular C driver library for 16x2 LCDs (HD44780 controller) using an I2C interface (PCF8574) on STM32 microcontrollers (tested on Nucleo-F411RE).
 
 - Low-Level I2C Control: Manual assembly of data frames for the PCF8574 expander, involving bitwise manipulation of RS, RW, EN, and BL flags.
 - printf Retargeting: Enables the use of the standard C library printf() function to output text directly to the LCD.
@@ -17,7 +17,7 @@ Pinout:
 | GND       | GND            |
 
 Example:
-Overwriting printf():
+printf() retargeting:
 ```c
 int __io_putchar(int ch)
 {
@@ -34,5 +34,5 @@ Initiliazaing and writing:
 ```c
 LCD_initialize(&hi2c2, &htim10);
 printf("github.com/\nwmajka13");
-fflush(stdout); //can be omitted when ...
+fflush(stdout); //can be omitted when buffoirng is turned off
 ```
